@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/aditionalBarForSort"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        >
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/sortDropDown"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"
+            >
+        </Spinner>
+
+        <Button
+            android:id="@+id/sortDancesButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sortDanceTypes"
+            />
+        <Button
+            android:id="@+id/removeSomeDances"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/removeSomeDances"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/aditionalBarForFilter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        >
+
+        <EditText
+            android:id="@+id/filterDanceText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:hint="@string/filter"
+            android:labelFor="@id/aditionalBarForFilter"
+            android:inputType="text"/>
+
+    </LinearLayout>
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+</LinearLayout>

@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">Dance App</string>
+
+    <string name="addNewDanceType">Add dance type</string>
+    <string name="secondActivityButton">Second Activity</string>
+    <string name="danceTypeAdd">Enter dance type information</string>
+    <string name="danceTypeTitle">Title</string>
+    <string name="danceTypeDescription">Description</string>
+    <string name="homeTitle">Welcome</string>
+    <string name="homeMessage">For now app lets you to explore available dances</string>
+    <string name="homeButtonToLab1">Explore dances</string>
+    <string name="sortDanceTypes">Sort</string>
+    <string name="filterDanceTypes">Filter</string>
+    <string name="adminHomeButton">Admin</string>
+    <string name="privateLessons">Private Lessons</string>
+    <string name="publicLessons">Public Lessons</string>
+    <string name="adminHomeWelcome">Admin Panel</string>
+    <string name="filter">Filter text</string>
+    <string name="removeSomeDances">Remove</string>
+    <string name="sendRequest">Send Request</string>
+    <string name="requestTitle">Request Sending Activity</string>
+    <string name="DanceDetailsPlayButton">Play video</string>
+
+
+    <string name="userHomeButton"></string>
+
+    <string-array name="Week">
+        <item> Monday </item>
+        <item> Tuesday </item>
+        <item> Wednesday </item>
+        <item> Thursday </item>
+        <item> Friday </item>
+        <item> Saturday </item>
+        <item> Sunday </item>
+    </string-array>
+    
+    <string-array name="Monday">
+
+    </string-array>
+    <string-array name="Tuesday">
+
+    </string-array>
+    <string-array name="Wednesday">
+
+    </string-array>
+    <string-array name="Thursday">
+
+    </string-array>
+    <string-array name="Friday">
+
+    </string-array>
+    <string-array name="Saturday">
+
+    </string-array>
+    <string-array name="Sunday">
+
+    </string-array>
+</resources>
