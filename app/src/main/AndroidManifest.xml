@@ -37,6 +37,7 @@
         <activity android:name=".Lab2Activity"></activity>
         <activity android:name=".DayDetails"></activity>
         <activity android:name=".DanceDetailsActivity"></activity>
+        <activity android:name=".AchievmentActivity"></activity>
         <activity android:name=".Lab3main"
             android:screenOrientation="portrait"
             android:label="Lab3">></activity>

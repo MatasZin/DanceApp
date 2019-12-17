@@ -18,7 +18,7 @@ public class AchievmentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.achievment);
 
-        achievmentText = (TextView) findViewById(R.id.achievment);
+        achievmentText = (TextView) findViewById(R.id.achievmentText);
         achievmentButton = (Button) findViewById(R.id.shareAchievment);
 
         String text = getIntent().getStringExtra("text");

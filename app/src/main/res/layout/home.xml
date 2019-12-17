@@ -11,14 +11,6 @@
         android:text="@string/homeTitle"
         android:textSize="50px" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:padding="50px"
-        android:text="@string/homeMessage"
-        android:textSize="40px" />
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -84,7 +76,7 @@
             android:id="@+id/userHomeButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/userHomeButton"
+            android:text="User"
             android:layout_centerHorizontal="true"
             />
     </RelativeLayout>

@@ -24,7 +24,7 @@ public class DayDetails extends AppCompatActivity {
 
         setUpUIViews();
 
-        String day = AdminPublicLessonsActivity.sharedPreferences.getString(AdminPublicLessonsActivity.SEL_DAY, null);
+        String day = UserPublicLessonsActivity.sharedPreferences.getString(UserPublicLessonsActivity.SEL_DAY, null);
         Bundle bundleItems = getIntent().getExtras();
         final ArrayList<DanceLesson> lessons = (ArrayList<DanceLesson>) bundleItems.getSerializable("publicLessons");
         ArrayList<DanceLesson> dayLessons ;

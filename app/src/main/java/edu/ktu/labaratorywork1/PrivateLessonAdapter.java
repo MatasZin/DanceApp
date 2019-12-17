@@ -32,7 +32,7 @@ public class PrivateLessonAdapter extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int position)  {
+    public DanceLesson getItem(int position)  {
         return originalArray.get(position);
     }
 
@@ -55,7 +55,7 @@ public class PrivateLessonAdapter extends BaseAdapter {
 
         title.setText(originalArray.get(position).getTitle());
         description.setText(originalArray.get(position).getDescription());
-        date.setText(originalArray.get(position).getWeekDay());
+        date.setText(originalArray.get(position).getDate());
         startTime.setText(originalArray.get(position).getStartTime());
         endTime.setText(originalArray.get(position).getEndTime());
         image.setImageResource(R.drawable.basicdance);
