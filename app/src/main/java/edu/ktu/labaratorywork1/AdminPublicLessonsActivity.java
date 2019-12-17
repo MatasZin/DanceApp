@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+
+import java.util.ArrayList;
 //import android.widget.Toolbar;
 
 public class AdminPublicLessonsActivity extends AppCompatActivity {
@@ -16,16 +18,23 @@ public class AdminPublicLessonsActivity extends AppCompatActivity {
     private ListView listView;
     public static SharedPreferences sharedPreferences;
     public static String SEL_DAY;
+    private ArrayList<DanceLesson> publiclessons;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_week);
-
+        final Intent intentGiven = getIntent();
+        //savedIntent=intentGiven;
+        Bundle bundleItems = intentGiven.getExtras();
+        final ArrayList<DanceLesson> lessons = (ArrayList<DanceLesson>) bundleItems.getSerializable("publicLessons");
+        publiclessons = lessons;
         setupUIViews();
-        initToolbar();
+        //initToolbar();
 
         setupListView();
+
+
     }
 
     private void setupUIViews() {
@@ -48,35 +57,36 @@ public class AdminPublicLessonsActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(AdminPublicLessonsActivity.this, DayDetails.class);
+                ArrayList<DanceLesson> publicLessons= new ArrayList<>();
+                Bundle lessons = new Bundle();
+                lessons.putSerializable("publicLessons", publiclessons);
+                intent.putExtras(lessons);
                 switch (position) {
                     case 0: {
-                        startActivity(new Intent(AdminPublicLessonsActivity.this, DayDetails.class));
+                        startActivity(intent);
                         sharedPreferences.edit().putString(SEL_DAY, "Monday").apply();
+
                         break;
                     }
                     case 1: {
-                        startActivity(new Intent(AdminPublicLessonsActivity.this, DayDetails.class));
+                        startActivity(intent);
                         sharedPreferences.edit().putString(SEL_DAY, "Tuesday").apply();
                         break;
                     }
                     case 2: {
-                        startActivity(new Intent(AdminPublicLessonsActivity.this, DayDetails.class));
+                        startActivity(intent);
                         sharedPreferences.edit().putString(SEL_DAY, "Wednesday").apply();
                         break;
                     }
                     case 3: {
-                        startActivity(new Intent(AdminPublicLessonsActivity.this, DayDetails.class));
+                        startActivity(intent);
                         sharedPreferences.edit().putString(SEL_DAY, "Thursday").apply();
                         break;
                     }
                     case 4: {
-                        startActivity(new Intent(AdminPublicLessonsActivity.this, DayDetails.class));
+                        startActivity(intent);
                         sharedPreferences.edit().putString(SEL_DAY, "Friday").apply();
-                        break;
-                    }
-                    case 5: {
-                        startActivity(new Intent(AdminPublicLessonsActivity.this, DayDetails.class));
-                        sharedPreferences.edit().putString(SEL_DAY, "Saturday").apply();
                         break;
                     }
                     default:

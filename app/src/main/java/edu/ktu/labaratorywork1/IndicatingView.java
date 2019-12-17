@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.Animation;
@@ -54,12 +55,24 @@ public class IndicatingView extends View{
                 canvas.drawLine(0, height,width, 0, paint);
                 break;
 
-            case EXECUTING:paint = new Paint();
-            paint.setColor(Color.BLUE);
-            paint.setStrokeWidth(20f);
-            canvas.drawLine(0, height, width/2, 0, paint);
-            canvas.drawLine(width/2, 0, width, height, paint);
-            canvas.drawLine(width, height, 0, height, paint);
+            case EXECUTING:
+                paint = new Paint();
+                paint.setColor(Color.BLUE);
+                paint.setStyle(Paint.Style.FILL_AND_STROKE);
+                paint.setAntiAlias(true);
+                //paint.setStrokeWidth(20f);
+                //canvas.drawLine(0, height, width/2, 0, paint);
+                //canvas.drawLine(width/2, 0, width, height, paint);
+                //canvas.drawLine(width, height, 0, height, paint);
+                Path path = new Path();
+                path.setFillType(Path.FillType.EVEN_ODD);
+                path.moveTo(height,width/2);
+                path.lineTo(0,width);
+                path.lineTo(0,0);
+                path.lineTo(height,width/2);
+                canvas.drawPath(path,paint);
+
+
             break;
             default:
                 break;

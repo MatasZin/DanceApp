@@ -19,7 +19,18 @@
     <string name="removeSomeDances">Remove</string>
     <string name="sendRequest">Send Request</string>
     <string name="requestTitle">Request Sending Activity</string>
+    <string name="Lab3Activity">LAB 3 Activity</string>
     <string name="DanceDetailsPlayButton">Play video</string>
+    <string name="x">x</string>
+    <string name="y">y</string>
+    <string name="z">z</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="no_sensor">There is no sensor in you device</string>
+    <string name="CoordinatesGPS">GPS Coordinates:</string>
+    <string name="Latitude_text">Lat:</string>
+    <string name="Longitude_text">Lng:</string>
+    <string name="takePhoto">Take Photo</string>
 
 
     <string name="userHomeButton"></string>

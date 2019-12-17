@@ -1,9 +1,10 @@
 package edu.ktu.labaratorywork1;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Time;
 
-public class DanceLesson {
+public class DanceLesson implements Serializable {
 
     private int iD;
     private String date;

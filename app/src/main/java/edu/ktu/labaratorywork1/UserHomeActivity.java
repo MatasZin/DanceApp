@@ -7,17 +7,25 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
+
 public class UserHomeActivity extends AppCompatActivity {
 
     private Button publicDancesButton;
     private Button privateDancesButton;
+    ArrayList<DanceLesson> danceLessons = new ArrayList<>();
 
     private Context context = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.adminhome);
+        setContentView(R.layout.userhome);
+
+        final Intent intentGiven = getIntent();
+        Bundle bundleItems = intentGiven.getExtras();
+        final ArrayList<DanceLesson> lessons = (ArrayList<DanceLesson>) bundleItems.getSerializable("lessons");
+        danceLessons = lessons;
 
         publicDancesButton = (Button) findViewById(R.id.userPublicLessonsButton);
         privateDancesButton = (Button) findViewById(R.id.userPrivateLessonsButton);
@@ -26,7 +34,18 @@ public class UserHomeActivity extends AppCompatActivity {
         privateDancesButton.setOnClickListener(startUserPrivteLessons);
     }
 
-    public void runUserPublicDanceLessons(Intent intent) {context.startActivity(intent);}
+    public void runUserPublicDanceLessons(Intent intent) {
+        ArrayList<DanceLesson> publicLessons = new ArrayList<>();
+        for (DanceLesson lesson:danceLessons){
+            if(!lesson.getType().equals("Private")){
+                publicLessons.add(lesson);
+            }
+        }
+        Bundle lessons = new Bundle();
+        lessons.putSerializable("publicLessons", publicLessons);
+        intent.putExtras(lessons);
+        context.startActivity(intent);
+    }
     View.OnClickListener startUserPublicLessons = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -35,7 +54,18 @@ public class UserHomeActivity extends AppCompatActivity {
         }
     };
 
-    public void runUserPrivateDanceLessons(Intent intent) {context.startActivity(intent);}
+    public void runUserPrivateDanceLessons(Intent intent) {
+        ArrayList<DanceLesson> privateLessons = new ArrayList<>();
+        for (DanceLesson lesson:danceLessons){
+            if(lesson.getType().equals("Private")){
+                privateLessons.add(lesson);
+            }
+        }
+        Bundle lessons = new Bundle();
+        lessons.putSerializable("privateLessons", privateLessons);
+        intent.putExtras(lessons);
+        context.startActivity(intent);
+    }
     View.OnClickListener startUserPrivteLessons = new View.OnClickListener() {
         @Override
         public void onClick(View v) {

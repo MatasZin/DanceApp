@@ -4,38 +4,252 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/adminPanel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:padding="50px"
+        android:padding="10dp"
         android:text="@string/adminHomeWelcome"
-        android:textSize="50px" />
+        android:textSize="20dp"
+        />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:id="@+id/lessonsButtonsLayout"
+        >
 
         <Button
             android:id="@+id/adminPublicLessonsButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/publicLessons"
-            android:layout_centerHorizontal="true"
+            android:layout_alignParentLeft="true"
+            />
+        <Button
+            android:id="@+id/adminPrivateLessonsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/privateLessons"
+            android:layout_alignParentRight="true"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/lessonsCreateButtonsLayout"
+        >
+
+        <Button
+            android:id="@+id/openCreatePublicLessonButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Public Lesson"
+            android:layout_alignParentLeft="true"
+            />
+        <Button
+            android:id="@+id/openCreatePrivateLessonButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Private Lesson"
+            android:layout_alignParentRight="true"
+            />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/weekDayLayout"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Week day"
+            android:textColor="#010b13"
+            android:textSize="40px"
+            android:id="@+id/weekDay"
+            />
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lessonWeekDay"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"
+            android:layout_toRightOf="@id/weekDay"
+            >
+        </Spinner>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/typeLayout"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Type"
+            android:textColor="#010b13"
+            android:textSize="40px"
+            android:id="@+id/type"
+            />
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lessonType"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"
+            android:layout_toRightOf="@id/type"
+            >
+        </Spinner>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/titleLayout"
+        android:padding="5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/danceTypeTitle"
+            android:textColor="#010b13"
+            android:textSize="40px"
+            android:id="@+id/title"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lessonTitle"
+            android:textColor="#1b1b1b"
+            android:layout_toRightOf="@id/title"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/descriptionLayout"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/danceTypeDescription"
+            android:textColor="#010b13"
+            android:textSize="40px"
+            android:id="@+id/description"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lessonDescription"
+            android:textColor="#1b1b1b"
+            android:layout_toRightOf="@id/description"
+            />
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/dateLayout"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date"
+            android:textColor="#010b13"
+            android:textSize="40px"
+            android:id="@+id/date"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lessonDate"
+            android:textColor="#1b1b1b"
+            android:layout_toRightOf="@id/date"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/startTimeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/startTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Time"
+            android:textColor="#010b13"
+            android:textSize="40px" />
+
+        <EditText
+            android:id="@+id/lessonStartTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/startTime"
+            android:textColor="#1b1b1b" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/endTimeLayout"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Time"
+            android:textColor="#010b13"
+            android:textSize="40px"
+            android:id="@+id/endTime"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lessonEndTime"
+            android:textColor="#1b1b1b"
+            android:layout_toRightOf="@id/endTime"
             />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:id="@+id/createLessonButtonsLayout"
+        android:padding="5dp"
+        android:layout_gravity="bottom">
 
         <Button
-            android:id="@+id/adminPrivateLessonsButton"
+            android:id="@+id/createLessonButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/privateLessons"
-            android:layout_centerHorizontal="true"
+            android:text="Create Lesson"
+            />
+        <Button
+            android:id="@+id/dismissCreateButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:layout_alignParentRight="true"
             />
     </RelativeLayout>
 
